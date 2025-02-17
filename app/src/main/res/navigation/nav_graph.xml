@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/taskListFragment">
+
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.example.taskify.ui.fragments.TaskListFragment"
+        android:label="Tasks">
+        <action
+            android:id="@+id/action_taskListFragment_to_addEditTaskFragment"
+            app:destination="@id/addEditTaskFragment" />
+        <action
+            android:id="@+id/action_taskListFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditTaskFragment"
+        android:name="com.example.taskify.ui.fragments.AddEditTaskFragment"
+        android:label="{title}">
+        <argument
+            android:name="taskId"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="com.example.taskify.ui.fragments.TaskDetailFragment"
+        android:label="Task Details">
+        <argument
+            android:name="taskId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_taskDetailFragment_to_addEditTaskFragment"
+            app:destination="@id/addEditTaskFragment" />
+    </fragment>
+
+</navigation>

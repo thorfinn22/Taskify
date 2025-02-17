@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_task_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/checkbox_complete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Complete project presentation" />
+
+        <CheckBox
+            android:id="@+id/checkbox_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_task_title"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_task_title" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_priority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_task_title"
+            tools:text="HIGH" />
+
+        <TextView
+            android:id="@+id/tv_due_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="8dp"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            app:drawableStartCompat="@drawable/ic_calendar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chip_priority"
+            tools:text="Due: Tomorrow, 5:00 PM" />
+
+        <TextView
+            android:id="@+id/tv_description_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/task_description"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_due_date" />
+
+        <TextView
+            android:id="@+id/tv_task_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description_label"
+            tools:text="Task description goes here" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="4dp"
+    android:theme="@style/Theme.MaterialComponents.DayNight"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <CheckBox
+            android:id="@+id/checkbox_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_task_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/chip_priority"
+            app:layout_constraintStart_toEndOf="@+id/checkbox_task"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Complete project presentation" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_task_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="?attr/textAppearanceBody2"
+            app:layout_constraintEnd_toEndOf="@+id/tv_task_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_task_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_task_title"
+            tools:text="Prepare and finalize the project presentation slides" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_priority"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="HIGH" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_due_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:drawableStartCompat="@drawable/ic_calendar"
+            app:layout_constraintStart_toStartOf="@+id/tv_task_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_task_description"
+            tools:text="Due: Tomorrow, 5:00 PM" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
